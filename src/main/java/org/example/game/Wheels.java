@@ -41,6 +41,10 @@ public class Wheels {
         this.friction = friction;
     }
 
+    public double FrictionDamage(Car car){
+            return this.getFriction()*0.8;
+    }
+
     @Override
     public String toString() {
         return "Wheels{" +

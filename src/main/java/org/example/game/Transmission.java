@@ -30,6 +30,10 @@ public class Transmission {
         this.deterioration = deterioration;
     }
 
+    public double DeteriorationDamage(Car car){
+        return this.getDeterioration()*0.8;
+    }
+
     @Override
     public String toString() {
         return "Transmission{" +

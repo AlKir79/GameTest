@@ -61,14 +61,15 @@ public class Car {
     }
 
     public double resRace(Car car){
-        return (car.year*0.1+car.getEngine().getPower()*0.5+car.getTransmission().getDeterioration()*0.3+car.getWheels().getFriction()*0.2);
-        car.engine.engineDamage(car);
+        // износ после гонки
+        car.engine.setPower(car.engine.engineDamage(car));
+        car.transmission.setDeterioration(car.transmission.DeteriorationDamage(car));
+        car.wheels.setFriction(car.wheels.FrictionDamage(car));
+        double carState= car.getEngine().getPower()*0.5+car.getTransmission().getDeterioration()*0.3+car.getWheels().getFriction()*0.2;
+        return carState;
     }
 
-    public Car carDamage(Car car){
-        this.engine.setPower(car.getEngine().getPower()*0.95);
-        return car;
-    }
+
 
     @Override
     public String toString() {
