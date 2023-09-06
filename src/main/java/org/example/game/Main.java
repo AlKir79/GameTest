@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-    Car car1 = new Car("Lada",2021,new Engine("21214",113),
-            new Transmission("Forward",3),new Wheels("Pirelly",17,4),
+    Car car1 = new Car("Lada",2021,new Engine("21214",113,0.95),
+            new Transmission("Forward",3,0.95),new Wheels("Pirelly",17,4,0.95),
             new Body("универсал",1200.));
 
-        Car car2 = new Car("Siber",2010,new Engine("Chrysler",143),
-                new Transmission("Forward",3),new Wheels("Continental",16,5),
+        Car car2 = new Car("Siber",2010,new Engine("Chrysler",143,0.95),
+                new Transmission("Forward",3,0.95),new Wheels("Continental",16,5,0.95),
                 new Body("седан",1500.));
 
     int key = 0;

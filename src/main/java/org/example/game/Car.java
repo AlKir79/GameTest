@@ -62,14 +62,20 @@ public class Car {
 
     public double resRace(Car car){
         // износ после гонки
-        car.engine.setPower(car.engine.engineDamage(car));
-        car.transmission.setDeterioration(car.transmission.DeteriorationDamage(car));
-        car.wheels.setFriction(car.wheels.FrictionDamage(car));
-        double carState= car.getEngine().getPower()*0.5+car.getTransmission().getDeterioration()*0.3+car.getWheels().getFriction()*0.2;
+        double carState= car.getEngine().getPower()* car.getEngine().getWear()+car.getTransmission().getDeterioration()*
+                car.transmission.getWear()+car.getWheels().getFriction()* car.wheels.getWear();
+        car.engine.setWear(car.engine.getWear()-0.02);
+        car.transmission.setWear(car.transmission.getWear()-0.02);
+        car.wheels.setWear(car.wheels.getWear()-0.05);
+        car.engine.setPower(car.engine.getPower()*);
         return carState;
     }
 
-
+    public void repairCar(Car car){
+        this.engine.setWear(1.);
+        this.transmission.setWear(1.);
+        this.wheels.setWear(1.0);
+    }
 
     @Override
     public String toString() {

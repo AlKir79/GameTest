@@ -1,10 +1,12 @@
 package org.example.game;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
-    Car car = new Car("a",2000,new Engine("v6",200),new Transmission("front",0.5),
-            new Wheels("Conti",17,0.7),new Body("coupe",1500));
+    Car car = new Car("a",2000,new Engine("v6",200,0.95),new Transmission("front",0.5,0.95),
+            new Wheels("Conti",17,0.7,0.95),new Body("coupe",1500));
     @org.junit.jupiter.api.Test
     void getName() {
         assertEquals("a",car.getName());
@@ -46,5 +48,10 @@ class CarTest {
 
     @org.junit.jupiter.api.Test
     void testToString() {
+    }
+
+    @Test
+    void resRace() {
+
     }
 }

@@ -3,14 +3,17 @@ package org.example.game;
 public class Engine {
     private String name;
     private double power;
+    private double wear;
 
-    public Engine(String name, double power) {
+    public Engine(String name, double power, double wear) {
         this.name = name;
         this.power = power;
+        this.wear = wear;
     }
     public Engine(){
         this.name = "Chrysler";
         this.power = 143;
+        this.wear = 0.95;
     }
 
     public String getName() {
@@ -29,8 +32,12 @@ public class Engine {
         this.power = power;
     }
 
-    public double engineDamage(Car car){
-        return this.power*0.95;
+    public double getWear() {
+        return wear;
+    }
+
+    public void setWear(double wear) {
+        this.wear = wear;
     }
 
     @Override

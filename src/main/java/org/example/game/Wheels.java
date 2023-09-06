@@ -4,17 +4,20 @@ public class Wheels {
     private String name;
     private double size; // размер
     private double friction;
+    private double wear;
 
-    public Wheels(String name, double size, double friction) {
+    public Wheels(String name, double size, double friction, double wear) {
         this.name = name;
         this.size = size;
         this.friction = friction;
+        this.wear = wear;
     }
 
     public Wheels(){
         this.name = "Continental";
         this.size = 16;
         this.friction = 5;
+        this.wear = 0.95;
     }
 
     public String getName() {
@@ -41,8 +44,12 @@ public class Wheels {
         this.friction = friction;
     }
 
-    public double FrictionDamage(Car car){
-            return this.getFriction()*0.8;
+    public double getWear() {
+        return wear;
+    }
+
+    public void setWear(double wear) {
+        this.wear = wear;
     }
 
     @Override

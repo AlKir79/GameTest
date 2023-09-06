@@ -3,15 +3,18 @@ package org.example.game;
 public class Transmission {
     private String name;
     private double deterioration; // изношенность
+    private double wear;
 
-    public Transmission(String name, double deterioration) {
+    public Transmission(String name, double deterioration, double wear) {
         this.name = name;
         this.deterioration = deterioration;
+        this.wear = wear;
     }
 
     public Transmission(){
         this.name = "Forward";
         this.deterioration = 3;
+        this.wear = 0.95;
     }
 
     public String getName() {
@@ -30,8 +33,12 @@ public class Transmission {
         this.deterioration = deterioration;
     }
 
-    public double DeteriorationDamage(Car car){
-        return this.getDeterioration()*0.8;
+    public double getWear() {
+        return wear;
+    }
+
+    public void setWear(double wear) {
+        this.wear = wear;
     }
 
     @Override
